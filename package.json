@@ -1,0 +1,28 @@
+{
+  "name": "before-dark",
+  "version": "1.0.0",
+  "description": "A runner's companion app that helps you beat the sunset.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JimBurch/before-dark.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JimBurch/before-dark/issues"
+  },
+  "homepage": "https://github.com/JimBurch/before-dark#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "next": "^10.0.7",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
