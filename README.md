@@ -26,7 +26,7 @@ Once the project moves into development, the press release can be used as a touc
   > This app helps you perfectly time your evening runs so that you arrive back at home, safely, before the sun goes down.
 
 ## Problem ##
-  > Evening is a great time to go for a jog -- beautiful skies and cooler temps -- but running in complete darkness is less than idea. It can be unsafe in cities and leave no visibility on the trail.
+  > Evening is a great time to go for a jog -- beautiful skies and cooler temps -- but running in complete darkness is less than ideal. It can be unsafe in cities and leave no visibility on the trail.
 
 ## Solution ##
   > Before Dark tells you exactly when you need to leave, based on your desired distance, pace, and location, to enjoy your full run and be back before sunset.
