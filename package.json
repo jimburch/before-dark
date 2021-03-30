@@ -4,16 +4,15 @@
   "description": "A runner's companion app that helps you beat the sunset.",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "start": "nodemon server/index.js",
+    "watch": "webpack serve --open"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JimBurch/before-dark.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Jim Burch",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/JimBurch/before-dark/issues"
@@ -21,8 +20,22 @@
   "homepage": "https://github.com/JimBurch/before-dark#readme",
   "dependencies": {
     "axios": "^0.21.1",
-    "next": "^10.0.7",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.2",
+    "nodemon": "^2.0.7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.14",
+    "@babel/preset-react": "^7.13.13",
+    "babel-loader": "^8.2.2",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^5.2.0",
+    "html-webpack-plugin": "^5.3.1",
+    "webpack": "^5.28.0",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2"
   }
 }

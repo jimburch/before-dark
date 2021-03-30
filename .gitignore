@@ -1,3 +1,4 @@
 node_modules
 config.js
-.next
+package-lock.json
+dist
