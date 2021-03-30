@@ -19,7 +19,7 @@ module.exports = {
     }
   ]},
   output: {
-    path: __dirname + '/client/',
+    path: __dirname + '/client/dist',
     filename: 'bundle.js'
   },
   plugins: [htmlPlugin],
