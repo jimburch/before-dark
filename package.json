@@ -4,8 +4,10 @@
   "description": "A runner's companion app that helps you beat the sunset.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server/index.js",
-    "watch": "webpack serve --open"
+    "nodemon": "nodemon server/index.js",
+    "serve": "npm run watch && npm run start",
+    "start": "webpack serve",
+    "watch": "webpack -w"
   },
   "repository": {
     "type": "git",

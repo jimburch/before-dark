@@ -6,12 +6,18 @@ const Input = () => {
   const [pace, setPace] = useState(0);
   const [zip, setZip] = useState(0);
 
+  const handleChange = (e) => {
+    e.preventDefault();
+    console.log(e.target.value)
+    console.log('this works')
+  }
+
   return (
     <div>
-      <form>
+      <form onSubmit={e => getSunset(e, zip)}>
         <label>
           How far do you want to run?
-          <input type="text" name="distance" />
+          <input type="text" name="distance" onChange={e => handleChange(e)} />
         </label>
         <label>
           What's your running pace?
