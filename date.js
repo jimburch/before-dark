@@ -1,3 +1,5 @@
+
+/*
 let distance = '5.5';
 let pace = '9:30';
 distance = Number(distance);
@@ -9,13 +11,7 @@ let minutes = Math.floor(time / 60);
 let newSeconds = time - minutes * 60;
 let runTime = minutes + ':' + newSeconds;
 console.log(distance, parts, seconds, time, minutes, newSeconds, runTime)
-
-
-
-
-
-
-
+*/
 
 /*
 let [month, date, year] = new Date().toLocaleDateString('en-US', { timeZone: 'Europe/London' }).split('/');
