@@ -4,10 +4,9 @@
   "description": "A runner's companion app that helps you beat the sunset.",
   "main": "index.js",
   "scripts": {
-    "nodemon": "nodemon server/index.js",
-    "serve": "npm run watch && npm run start",
-    "start": "webpack serve",
-    "watch": "webpack -w"
+    "start": "nodemon server/index.js",
+    "react-dev": "webpack -d --watch",
+    "react-serve": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -32,15 +31,14 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.14",
-    "@babel/preset-react": "^7.13.13",
-    "babel-loader": "^8.2.2",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
-    "css-loader": "^5.2.0",
-    "html-webpack-plugin": "^5.3.1",
-    "style-loader": "^2.0.0",
-    "webpack": "^5.28.0",
-    "webpack-cli": "^4.6.0",
+    "body-parser": "^1.18.3",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.11.2"
   }
 }

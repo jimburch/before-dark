@@ -1,29 +1,24 @@
-const HtmlWebPackPlugin = require('html-webpack-plugin');
-const htmlPlugin = new HtmlWebPackPlugin({
-  template: './client/src/index.html',
-  filename: './index.html'
-});
+const path = require('path');
+const SRC_DIR = path.join(__dirname, '/client/src');
+const DIST_DIR = path.join(__dirname, '/client/dist');
 
 module.exports = {
-  mode: 'development',
-  entry: "./client/src/index.js",
-  module: {
-    rules: [{
-      test: /\.js$/,
-      exclude: /node-modules/,
-      use: { loader: 'babel-loader' }
-    },
-    {
-      test: /\.css$/,
-      use: ['style-loader', 'css-loader']
-    }
-  ]},
+  entry: `${SRC_DIR}/index.jsx`,
+  devtool: 'source-map',
   output: {
-    path: __dirname + '/client/dist',
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    path: DIST_DIR
   },
-  plugins: [htmlPlugin],
-  stats: {
-    errorDetails: true
+  module: {
+    rules: [
+      {
+        test: [/\.jsx$/],
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['env', 'react'],
+        }
+      }
+    ]
   }
-}
+};

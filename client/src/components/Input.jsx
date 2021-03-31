@@ -1,31 +1,34 @@
 import React, { useState } from 'react';
-// import Form from 'react-bootstrap/Form';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
-const Input = () => {
-  const [distance, setDistance] = useState(0);
-  const [pace, setPace] = useState(0);
-  const [zip, setZip] = useState(0);
+const Input = ({ getSunset }) => {
+  // const [distance, setDistance] = useState(0);
+  // const [pace, setPace] = useState(0);
+  // const [zip, setZip] = useState(0);
+  const [state, setState] = useState({});
 
   const handleChange = (e) => {
     e.preventDefault();
-    console.log(e.target.value)
-    console.log('this works')
+    const key = e.target.name;
+    const value = e.target.value;
+    setState({ ...state, [key]: (value) })
   }
 
   return (
     <div>
-      <form onSubmit={e => getSunset(e, zip)}>
+      <form onSubmit={e => getSunset(e, state.zip, state.distance, state.pace)}>
         <label>
           How far do you want to run?
           <input type="text" name="distance" onChange={e => handleChange(e)} />
         </label>
         <label>
           What's your running pace?
-          <input type="text" name="pace" />
+          <input type="text" name="pace" onChange={e => handleChange(e)} />
         </label>
         <label>
           Where do you live? (we use this to find your sunset time)
-          <input type="text" name="zip" />
+          <input type="text" name="zip" onChange={e => handleChange(e)} />
         </label>
         <input type="submit" value="Submit" />
       </form>
