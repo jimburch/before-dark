@@ -29,10 +29,10 @@ const Input = ({ toggle, getSunset }) => {
   }, [toggle])
 
   return (
-    <div>
+    <Container className="input-container">
       <Form onSubmit={e => getSunset(e, zip, distance, pace)}>
-        <Form.Label>How many miles do you want to run? {distance ? <span>{distance} mile(s) total</span> : null}</Form.Label>
-          <DropdownButton title="Select Miles" onSelect={handleDistance}>
+        <Form.Label className="input-line">How many miles do you want to run? {distance ? <div className="selected">{distance} mile(s) total</div> : null}</Form.Label>
+          <DropdownButton className="input-line" title="Select Miles" onSelect={handleDistance}>
             <Dropdown.Item eventKey="1.0">1.0</Dropdown.Item>
             <Dropdown.Item eventKey="1.5">1.5</Dropdown.Item>
             <Dropdown.Item eventKey="2.0">2.0</Dropdown.Item>
@@ -53,8 +53,8 @@ const Input = ({ toggle, getSunset }) => {
             <Dropdown.Item eventKey="9.5">9.5</Dropdown.Item>
             <Dropdown.Item eventKey="10.0">10.0</Dropdown.Item>
           </DropdownButton>
-        <Form.Label>How many minutes do you think it will take to run each mile, on average? {pace ? <span>{pace} minute(s) per mile</span> : null}</Form.Label>
-          <DropdownButton title="Select Pace" onSelect={handlePace}>
+        <Form.Label className="input-line">How many minutes do you think it will take to run each mile, on average? {pace ? <div className="selected">{pace} minute(s) per mile</div> : null}</Form.Label>
+          <DropdownButton className="input-line" title="Select Pace" onSelect={handlePace}>
             <Dropdown.Item eventKey="7:30">7:30</Dropdown.Item>
             <Dropdown.Item eventKey="7:45">7:45</Dropdown.Item>
             <Dropdown.Item eventKey="8:00">8:00</Dropdown.Item>
@@ -77,13 +77,13 @@ const Input = ({ toggle, getSunset }) => {
             <Dropdown.Item eventKey="12:00">12:00</Dropdown.Item>
           </DropdownButton>
         <Form.Group>
-          <Form.Label>What's your zip code?</Form.Label>
-          <Form.Control className="zip-form" type="zipcode" value={zip} placeholder="5 digit zip code" maxLength="5" onChange={handleZip} />
+          <Form.Label className="input-line">What's your zip code?</Form.Label>
+          <Form.Control className="input-line" className="zip-form" type="zipcode" value={zip} placeholder="5 digit zip code" maxLength="5" onChange={handleZip} />
           <Form.Text>We use this to find your local sunset time.</Form.Text>
         </Form.Group>
-        <Button variant="primary" type="submit">Submit</Button>
+        <Button className="input-line" variant="primary" type="submit">Submit</Button>
       </Form>
-    </div>
+    </Container>
   );
 };
 

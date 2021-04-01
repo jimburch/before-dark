@@ -14,7 +14,7 @@ const App = () => {
   const getSunset = (e, zip, distance, pace) => {
     e.preventDefault();
     const options = {
-      url: `http://localhost:3001/sunset/${zip}`,
+      url: `http://localhost:8080/sunset/${zip}`,
       method: 'get'
     }
 
@@ -37,7 +37,7 @@ const App = () => {
     setToggle(true);
 
     const options = {
-      url: 'http://localhost:3001/leave',
+      url: 'http://localhost:8080/leave',
       method: 'post',
       headers: {
         'Content-Type': 'application/json'
@@ -142,11 +142,11 @@ const App = () => {
   }
 
   return (
-    <Container>
+    <Container className="app-container">
       <Row>
         <Col>
-          <img src="./static/before-dark-logo.png" alt="before-dark-logo" />
-          <div>A runner's companion app so you can beat the sunset.</div>
+          <img className="logo-img" src="./static/before-dark-logo.png" alt="before-dark-logo" />
+          <div className="tagline">A runner's companion app so you can beat the sunset.</div>
         </Col>
       </Row>
       <Row>
@@ -156,10 +156,14 @@ const App = () => {
       </Row>
       <Row>
         <Col>
-          {toggle ? <Result sunset={sunset} runTime={runTime} leaveTime={leaveTime} /> : null}
-          {toggle ? <Button variant="primary" type="submit" onClick={e => clearResult(e)}>Run Again</Button> : null}
+          {toggle ? <Result className="result" sunset={sunset} runTime={runTime} leaveTime={leaveTime} /> : null}
         </Col>
       </Row>
+      <Container>
+        <Row>
+          {toggle ? <Button className="again-btn" variant="primary" type="submit" onClick={e => clearResult(e)}>Run Again</Button> : null}
+        </Row>
+      </Container>
     </Container>
   );
 };
