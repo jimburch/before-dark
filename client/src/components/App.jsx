@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Input from './Input.jsx';
+import Result from './Result.jsx';
 
 const App = () => {
   const [sunset, setSunset] = useState('');
   const [runTime, setRunTime] = useState('');
   const [leaveTime, setLeaveTime] = useState('');
+  const [toggle, setToggle] = useState(false);
 
   const getSunset = (e, zip, distance, pace) => {
     e.preventDefault();
@@ -30,6 +32,12 @@ const App = () => {
     setSunset(militaryToStandard(localSunset));
     setRunTime(runLength);
     setLeaveTime(timeToLeave);
+    setToggle(true);
+  }
+
+  const clearResult = e => {
+    e.preventDefault();
+    setToggle(false);
   }
 
   const findLocalSunset = (time) => {
@@ -96,7 +104,6 @@ const App = () => {
     let hours = Number(parts[0]);
     let minutes = Number(parts[1]);
     let ampm = 'PM'
-    console.log(hours, minutes)
     if (minutes < 10) {
       minutes = '0' + minutes;
     }
@@ -112,10 +119,10 @@ const App = () => {
   return (
     <div>
       <h1>Before Dark</h1>
-      <Input getSunset={getSunset} />
-      <div>Tonight's sunset is at {sunset}</div>
-      <div>Your run should take approximately {runTime}</div>
-      <div>Leave by {leaveTime} to get home before dark!</div>
+      <span>A runner's companion app so you can beat the sunset.</span>
+      <Input toggle={toggle} getSunset={getSunset} />
+      {toggle ? <Result sunset={sunset} runTime={runTime} leaveTime={leaveTime} /> : null}
+      {toggle ? <button onClick={e => clearResult(e)}>Run Again</button> : null}
     </div>
   );
 };
