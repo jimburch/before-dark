@@ -14,7 +14,7 @@ const App = () => {
   const getSunset = (e, zip, distance, pace) => {
     e.preventDefault();
     const options = {
-      url: `http://http://52.14.85.171/sunset/${zip}`,
+      url: `http://52.14.85.171/sunset/${zip}`,
       method: 'get'
     }
 
@@ -37,7 +37,7 @@ const App = () => {
     setToggle(true);
 
     const options = {
-      url: 'http://http://52.14.85.171/leave',
+      url: 'http://52.14.85.171/leave',
       method: 'post',
       headers: {
         'Content-Type': 'application/json'
