@@ -1,0 +1,78 @@
+#body {
+  background-color: #191970;
+  color: white;
+}
+
+.app-container {
+  margin: auto !important;
+  width: 50% !important;
+}
+
+.logo-img {
+  height: auto;
+  width: 500px;
+  margin: 5px auto;
+}
+
+.tagline {
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  font-weight: bold;
+  color: gold;
+  font-size: 18px;
+}
+
+.input-container {
+  margin: 35px 0px;
+}
+
+.input-line {
+  margin: 8px 0px;
+}
+
+.selected {
+  font-weight: bold;
+  color: gold;
+}
+
+.zip-form {
+  width: 250px !important;
+}
+
+.result {
+  margin: auto !important;
+  width: 50% !important;
+  text-align: center !important;
+}
+
+.result-sub {
+  margin: auto !important;
+  width: 50% !important;
+  text-align: center !important;
+  font-weight: bold;
+}
+
+.result-main {
+  margin: 10px auto !important;
+  width: 50% !important;
+  text-align: center !important;
+  color: gold;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.again-btn {
+  width: 200px !important;
+  margin: auto !important;
+  margin-top: 15px !important;
+}
+
+.footnote {
+  color: gray;
+  font-size: 10px;
+  font-style: italic;
+  margin: 20px auto !important;
+  width: 50% !important;
+  text-align: center !important;
+}
