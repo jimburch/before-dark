@@ -145,7 +145,7 @@ const App = () => {
     <Container>
       <Row>
         <Col>
-          <img src="../public/before-dark-logo.png" alt="before-dark-logo" />
+          <img src="./static/before-dark-logo.png" alt="before-dark-logo" />
           <div>A runner's companion app so you can beat the sunset.</div>
         </Col>
       </Row>
