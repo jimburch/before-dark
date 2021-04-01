@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Input from './Input.jsx';
 
@@ -16,17 +16,27 @@ const App = () => {
 
     axios(options)
     .then((response) => {
-      findLocalSunset(response.data);
-    })
-    .then(() => {
-      findRunTime(distance, pace);
-    })
-    .then(() => {
-      findLeaveTime(sunset, runTime);
+      runCalc(response.data, distance, pace);
     })
     .catch((error) => {
       console.log(error);
     })
+  }
+
+  const runCalc = (sunset, distance, pace) => {
+    let localSunset = findLocalSunset(sunset);
+    let runLength = findRunTime(distance, pace);
+    let timeToLeave = findLeaveTime(localSunset, runLength);
+    setSunset(militaryToStandard(localSunset));
+    setRunTime(runLength);
+    setLeaveTime(timeToLeave);
+  }
+
+  const findLocalSunset = (time) => {
+    let [month, date, year] = new Date().toLocaleDateString('en-US', { timeZone: 'Europe/London' }).split('/');
+    let local = new Date(`${month}/${date}/${year} ${time} UTC`)
+    let localTime = local.toTimeString();
+    return localTime;
   }
 
   const findRunTime = (distance, pace) => {
@@ -34,26 +44,15 @@ const App = () => {
     let totalSeconds = minutesToSeconds(pace);
     let runTimeInSeconds = numDist * totalSeconds;
     let runTime = secondsToMinutes(runTimeInSeconds);
-    setRunTime(runTime);
-  }
-
-  const findLocalSunset = (time) => {
-    let [month, date, year] = new Date().toLocaleDateString('en-US', { timeZone: 'Europe/London' }).split('/');
-    let local = new Date(`${month}/${date}/${year} ${time} UTC`)
-    let localTime = local.toTimeString();
-    setSunset(localTime);
+    return runTime;
   }
 
   const findLeaveTime = (sundown, run) => {
-    console.log(sundown, run);
     let sunsetSeconds = hoursToSeconds(sundown);
     let runSeconds = minutesToSeconds(run);
     let leaveTimeInSeconds = sunsetSeconds - runSeconds;
-    // console.log('sunset and run: ', sunsetSeconds, runSeconds);
-    // console.log('leave in seconds: ', leaveTimeInSeconds);
     let leaveTime = secondsToHours(leaveTimeInSeconds);
-    // console.log('leave time: ', leaveTime);
-    setLeaveTime(leaveTime);
+    return leaveTime;
   }
 
   const minutesToSeconds = time => {
@@ -70,9 +69,7 @@ const App = () => {
 
   const hoursToSeconds = time => {
     let parts = time.split(/[ :]+/);
-    console.log('split: ', parts)
     parts = parts.map(Number);
-    console.log('parts: ', parts)
     return (parts[0] * 3600) + (parts[1] * 60) + parts[2];
   }
 
@@ -82,6 +79,24 @@ const App = () => {
     let minutes = Math.floor(time / 60);
     let seconds = time - minutes * 60;
     let ampm = 'PM'
+    if (minutes < 10) {
+      minutes = '0' + minutes;
+    }
+    if (hours < 12) {
+      ampm = 'AM'
+    }
+    if (hours > 12) {
+      hours -= 12;
+    }
+    return hours + ':' + minutes + ' ' + ampm;
+  }
+
+  const militaryToStandard = time => {
+    let parts = time.split(/[ :]+/);
+    let hours = Number(parts[0]);
+    let minutes = Number(parts[1]);
+    let ampm = 'PM'
+    console.log(hours, minutes)
     if (minutes < 10) {
       minutes = '0' + minutes;
     }
