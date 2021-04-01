@@ -18,14 +18,14 @@ const App = () => {
 
     axios(options)
     .then((response) => {
-      runCalc(response.data, distance, pace);
+      runCalc(response.data, distance, pace, zip);
     })
     .catch((error) => {
       console.log(error);
     })
   }
 
-  const runCalc = (sunset, distance, pace) => {
+  const runCalc = (sunset, distance, pace, zip) => {
     let localSunset = findLocalSunset(sunset);
     let runLength = findRunTime(distance, pace);
     let timeToLeave = findLeaveTime(localSunset, runLength);
@@ -33,6 +33,29 @@ const App = () => {
     setRunTime(runLength);
     setLeaveTime(timeToLeave);
     setToggle(true);
+
+    const options = {
+      url: 'http://localhost:3001/leave',
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      data: {
+        zip,
+        sunset: militaryToStandard(localSunset),
+        distance,
+        pace,
+        runTime: runLength,
+        leaveTime: timeToLeave
+      }
+    }
+    axios(options)
+    .then((response) => {
+      console.log('Leave stats saved! ', response);
+    })
+    .catch((error) => {
+      console.log(error);
+    })
   }
 
   const clearResult = e => {
