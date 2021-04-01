@@ -20,7 +20,9 @@ app.listen(PORT, () => {
 
 // ROUTERS
 
-// app.get('/', )
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'client', 'dist'));
+})
 
 app.get('/sunset/:zip', getSunset);
 app.post('/leave', storeLeaveStats);
