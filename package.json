@@ -4,7 +4,7 @@
   "description": "A runner's companion app that helps you beat the sunset.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server/index.js",
+    "server": "nodemon server/index.js",
     "react-dev": "webpack -d --watch",
     "react-serve": "webpack-dev-server"
   },
