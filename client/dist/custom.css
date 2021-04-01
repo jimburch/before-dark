@@ -10,8 +10,10 @@
 
 .logo-img {
   height: auto;
-  width: 500px;
-  margin: 5px auto;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 .tagline {
