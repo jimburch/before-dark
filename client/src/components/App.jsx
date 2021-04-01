@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 import Input from './Input.jsx';
 import Result from './Result.jsx';
@@ -144,8 +145,8 @@ const App = () => {
     <Container>
       <Row>
         <Col>
-          <h1>Before Dark</h1>
-          <span>A runner's companion app so you can beat the sunset.</span>
+          <img src="../public/before-dark-logo.png" alt="before-dark-logo" />
+          <div>A runner's companion app so you can beat the sunset.</div>
         </Col>
       </Row>
       <Row>
@@ -156,7 +157,7 @@ const App = () => {
       <Row>
         <Col>
           {toggle ? <Result sunset={sunset} runTime={runTime} leaveTime={leaveTime} /> : null}
-          {toggle ? <button onClick={e => clearResult(e)}>Run Again</button> : null}
+          {toggle ? <Button variant="primary" type="submit" onClick={e => clearResult(e)}>Run Again</Button> : null}
         </Col>
       </Row>
     </Container>
