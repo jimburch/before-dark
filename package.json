@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon server",
+    "heroku-postbuild": "webpack -p",
     "react-dev": "webpack -d --watch",
     "react-serve": "webpack-dev-server"
   },

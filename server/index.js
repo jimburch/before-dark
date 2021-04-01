@@ -7,7 +7,7 @@ const getSunset = require('./controllers/sunset.js')
 const storeLeaveStats = require('../database/controllers/leave.js');
 
 const app = express();
-const PORT = 8000;
+const PORT = process.env.PORT || 8080;
 
 app.use(express.static(path.join(__dirname, '..', 'client', 'dist')));
 app.use(bodyParser.json());
