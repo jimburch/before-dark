@@ -10,10 +10,6 @@ const PORT = 3001;
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get('/', (req, res) => {
-  res.send('Hello World');
-})
-
 app.listen(PORT, () => {
   console.log(`Server listening on PORT:${PORT}`)
 });
@@ -21,3 +17,4 @@ app.listen(PORT, () => {
 // ROUTERS
 
 app.get('/sunset/:zip', getSunset);
+app.get('/leave', /* mongo controller */);
