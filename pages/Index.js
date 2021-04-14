@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
-import Input from './Input.jsx';
-import Result from './Result.jsx';
+import Input from '../client/components/Input';
+import Result from '../client/components/Result';
 
-const App = () => {
+const Index = () => {
   const [sunset, setSunset] = useState('');
   const [runTime, setRunTime] = useState('');
   const [leaveTime, setLeaveTime] = useState('');
@@ -14,7 +14,7 @@ const App = () => {
   const getSunset = (e, zip, distance, pace) => {
     e.preventDefault();
     const options = {
-      url: `http://52.14.85.171/sunset/${zip}`,
+      url: `http://localhost:4000/sunset/${zip}`,
       method: 'get'
     }
 
@@ -37,7 +37,7 @@ const App = () => {
     setToggle(true);
 
     const options = {
-      url: 'http://52.14.85.171/leave',
+      url: 'http://localhost:4000/leave',
       method: 'post',
       headers: {
         'Content-Type': 'application/json'
@@ -168,4 +168,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Index;
