@@ -20,7 +20,7 @@ const Input = ({ toggle, getSunset }) => {
   const buildMilesArray = () => {
     const result = [];
     for (let i = 1; i <= 10; i += 0.5) {
-      result.push(i);
+      result.push(i.toFixed(1));
     }
     setMiles(result);
   };
@@ -29,9 +29,12 @@ const Input = ({ toggle, getSunset }) => {
     const result = [];
     let minutes = 7;
     let seconds = 0;
-    while (minutes < 15) {
-      let time = minutes + ':' + seconds;
-      result.push(time);
+    while (minutes <= 15) {
+      if (seconds === 0) {
+        result.push(minutes + ':00');
+      } else {
+        result.push(minutes + ':' + seconds);
+      }
       if (seconds === 45) {
         minutes += 1;
         seconds = 0;

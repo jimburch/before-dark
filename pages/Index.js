@@ -144,9 +144,9 @@ const Index = () => {
     <div className="app-container">
       <h1>Before Dark 🌙</h1>
       <div className="tagline">A runner's companion app so you can beat the sunset.</div>
-      <Input toggle={toggle} getSunset={getSunset} />
       {toggle ? <Result className="result" sunset={sunset} runTime={runTime} leaveTime={leaveTime} /> : null}
       {toggle ? <button className="again-btn" variant="primary" type="submit" onClick={e => clearResult(e)}>Run Again</button> : null}
+      <Input toggle={toggle} getSunset={getSunset} />
     </div>
   );
 };
