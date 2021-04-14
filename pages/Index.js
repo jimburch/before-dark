@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import Button from 'react-bootstrap/Button';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
-import Input from '../client/components/Input';
-import Result from '../client/components/Result';
+
+import Input from '../components/Input';
+import Result from '../components/Result';
 
 const Index = () => {
   const [sunset, setSunset] = useState('');
@@ -14,7 +13,7 @@ const Index = () => {
   const getSunset = (e, zip, distance, pace) => {
     e.preventDefault();
     const options = {
-      url: `http://localhost:4000/sunset/${zip}`,
+      url: `http://localhost:8000/sunset/${zip}`,
       method: 'get'
     }
 
@@ -37,7 +36,7 @@ const Index = () => {
     setToggle(true);
 
     const options = {
-      url: 'http://localhost:4000/leave',
+      url: 'http://localhost:8000/leave',
       method: 'post',
       headers: {
         'Content-Type': 'application/json'
@@ -142,29 +141,13 @@ const Index = () => {
   }
 
   return (
-    <Container className="app-container">
-      <Row>
-        <Col>
-          <img className="logo-img" src="./static/before-dark-logo.png" alt="before-dark-logo" />
-          <div className="tagline">A runner's companion app so you can beat the sunset.</div>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <Input toggle={toggle} getSunset={getSunset} />
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          {toggle ? <Result className="result" sunset={sunset} runTime={runTime} leaveTime={leaveTime} /> : null}
-        </Col>
-      </Row>
-      <Container>
-        <Row>
-          {toggle ? <Button className="again-btn" variant="primary" type="submit" onClick={e => clearResult(e)}>Run Again</Button> : null}
-        </Row>
-      </Container>
-    </Container>
+    <div className="app-container">
+      <h1>Before Dark 🌙</h1>
+      <div className="tagline">A runner's companion app so you can beat the sunset.</div>
+      <Input toggle={toggle} getSunset={getSunset} />
+      {toggle ? <Result className="result" sunset={sunset} runTime={runTime} leaveTime={leaveTime} /> : null}
+      {toggle ? <button className="again-btn" variant="primary" type="submit" onClick={e => clearResult(e)}>Run Again</button> : null}
+    </div>
   );
 };
 
