@@ -7,7 +7,7 @@ const getSunset = require('./controllers/sunset.js')
 const storeLeaveStats = require('../database/controllers/leave.js');
 
 const app = express();
-const PORT = 8080;
+const PORT = 8000;
 
 app.use(cors());
 app.use(express.static(path.join(__dirname, '..', 'client', 'dist')));
