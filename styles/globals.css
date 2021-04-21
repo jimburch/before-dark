@@ -23,3 +23,21 @@ h1 {
   font-weight: 200;
   font-size: 1em;
 }
+
+/* CUSTOM DROPDOWN SELECT */
+
+/* The container must be positioned relative: */
+.custom-select {
+  position: relative;
+  width: 200px;
+}
+
+.custom-select select {
+/*hide original SELECT element: */
+}
+
+.select-selected {
+  background-color: DodgerBlue;
+}
+
+/* CUSTOM SELECT END */

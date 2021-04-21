@@ -60,18 +60,24 @@ const Input = ({ toggle, getSunset }) => {
       <form onSubmit={e => getSunset(e, zip, distance, pace)}>
         <div>How many miles do you want to run?</div>
         {distance ? <div className="selected">{distance} mile(s) total</div> : null}
-        <select onChange={handleDistance}>
-          {miles.map((mile, index) => (
-            <option key={index} value={mile}>{mile}</option>
-          ))}
-        </select>
+        <div className="custom-select">
+          <select onChange={handleDistance}>
+            <option value="x">Select Distance:</option>
+            {miles.map((mile, index) => (
+              <option key={index} value={mile}>{mile}</option>
+            ))}
+          </select>
+        </div>
         <div className="input-line">How many minutes do you think it will take to run each mile, on average?</div>
         {pace ? <div className="selected">{pace} minutes per mile</div> : null}
-        <select onChange={handlePace}>
-          {minutes.map((minute, index) => (
-            <option key={index} value={minute}>{minute}</option>
-          ))}
-        </select>
+        <div className="custom-select">
+          <select onChange={handlePace}>
+            <option value="x">Select Pace:</option>
+            {minutes.map((minute, index) => (
+              <option key={index} value={minute}>{minute}</option>
+            ))}
+          </select>
+        </div>
         <div className="input-line">What's your zip code?</div>
         <input className="input-line" className="zip-form" type="text" value={zip} placeholder="5 digit zip code" maxLength="5" onChange={handleZip} />
         <div>We use this to find your local sunset time.</div>

@@ -1,7 +1,6 @@
 const express = require('express');
-const path = require('path');
 const cors = require('cors');
-const db = require('../database/index.js');
+const database = require('../database/index.js');
 const getSunset = require('./controllers/sunset.js')
 const storeLeaveStats = require('../database/controllers/leave.js');
 
