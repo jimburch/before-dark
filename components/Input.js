@@ -9,13 +9,24 @@ const Input = ({ toggle, getSunset }) => {
 
   const handleDistance = e => {
     setDistance(e.target.value);
-  }
+  };
+
   const handlePace = e => {
     setPace(e.target.value);
-  }
+  };
+
   const handleZip = e => {
     setZip(e.target.value);
-  }
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    if (!distance || !pace || !zip) {
+      alert('Please fill in all fields!');
+    } else {
+      getSunset(zip, distance, pace);
+    }
+  };
 
   const buildMilesArray = () => {
     const result = [];
@@ -57,12 +68,12 @@ const Input = ({ toggle, getSunset }) => {
 
   return (
     <div className="input-container">
-      <form onSubmit={e => getSunset(e, zip, distance, pace)}>
+      <form className="input-form" onSubmit={handleSubmit}>
         <div>How many miles do you want to run?</div>
         {distance ? <div className="selected">{distance} mile(s) total</div> : null}
         <div className="custom-select">
           <select onChange={handleDistance}>
-            <option value="x">Select Distance:</option>
+            <option value="">Select Distance:</option>
             {miles.map((mile, index) => (
               <option key={index} value={mile}>{mile}</option>
             ))}
@@ -72,7 +83,7 @@ const Input = ({ toggle, getSunset }) => {
         {pace ? <div className="selected">{pace} minutes per mile</div> : null}
         <div className="custom-select">
           <select onChange={handlePace}>
-            <option value="x">Select Pace:</option>
+            <option value="">Select Pace:</option>
             {minutes.map((minute, index) => (
               <option key={index} value={minute}>{minute}</option>
             ))}

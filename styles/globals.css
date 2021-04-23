@@ -24,20 +24,40 @@ h1 {
   font-size: 1em;
 }
 
+.form-container {
+  margin: auto;
+  width: 80%;
+  text-align: center;
+  margin-top: 25%;
+}
+
+.input-form {
+
+}
+
 /* CUSTOM DROPDOWN SELECT */
 
 /* The container must be positioned relative: */
 .custom-select {
   position: relative;
-  width: 200px;
-}
-
-.custom-select select {
-/*hide original SELECT element: */
+  /* width: 200px; */
 }
 
 .select-selected {
   background-color: DodgerBlue;
 }
 
-/* CUSTOM SELECT END */
+/* FOOTER */
+
+.footnote {
+  position: fixed;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
+  width: 80%;
+  color: lightgray;
+  font-weight: 300;
+  font-size: 0.75em;
+  /* background-color: lightgray; */
+  /* color: black; */
+}

@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-// import styles from '../styles/index.module.css';
 
 import Input from '../components/Input';
 import Result from '../components/Result';
@@ -11,8 +10,7 @@ const Index = () => {
   const [leaveTime, setLeaveTime] = useState('');
   const [toggle, setToggle] = useState(false);
 
-  const getSunset = (e, zip, distance, pace) => {
-    e.preventDefault();
+  const getSunset = (zip, distance, pace) => {
     const options = {
       url: `http://localhost:8000/sunset/${zip}`,
       method: 'get'
@@ -144,8 +142,8 @@ const Index = () => {
   return (
     <div className="app-container">
       <h1>Before Dark 🌙</h1>
+      <div className="tagline">A runner's companion app so you can beat the sunset</div>
       <div className="form-container">
-        <div className="tagline">A runner's companion app so you can beat the sunset</div>
         {toggle ? <Result className="result" sunset={sunset} runTime={runTime} leaveTime={leaveTime} /> : null}
         {toggle ? <button className="again-btn" variant="primary" type="submit" onClick={e => clearResult(e)}>Run Again</button> : null}
         <Input toggle={toggle} getSunset={getSunset} />
