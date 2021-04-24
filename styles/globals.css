@@ -31,21 +31,27 @@ h1 {
   margin-top: 15%;
 }
 
-.input-form {
+/* INPUT FORM */
 
+.input-container * {
+  margin-bottom: 8px;
+}
+
+.zip-privacy {
+  font-size: 12px;
+  color: gray;
+}
+
+.submit {
+  margin-top: 25px;
+  background-color: #000220;
+  color: white;
+  padding: 15px 25px;
+  border: 1px white solid;
+  border-radius: 10px;
 }
 
 /* CUSTOM DROPDOWN SELECT */
-
-/* The container must be positioned relative: */
-.custom-select {
-  position: relative;
-  /* width: 200px; */
-}
-
-.select-selected {
-  background-color: DodgerBlue;
-}
 
 /* FOOTER */
 

@@ -69,7 +69,7 @@ const Input = ({ toggle, getSunset }) => {
   return (
     <div className="input-container">
       <form className="input-form" onSubmit={handleSubmit}>
-        <div>How many miles do you want to run?</div>
+        <div className="distance-label">How many miles do you want to run?</div>
         {distance ? <div className="selected">{distance} mile(s) total</div> : null}
         <div className="custom-select">
           <select onChange={handleDistance}>
@@ -79,7 +79,7 @@ const Input = ({ toggle, getSunset }) => {
             ))}
           </select>
         </div>
-        <div className="input-line">How many minutes do you think it will take to run each mile, on average?</div>
+        <div className="pace-label">How many minutes do you think it will take to run each mile, on average?</div>
         {pace ? <div className="selected">{pace} minutes per mile</div> : null}
         <div className="custom-select">
           <select onChange={handlePace}>
@@ -89,10 +89,10 @@ const Input = ({ toggle, getSunset }) => {
             ))}
           </select>
         </div>
-        <div className="input-line">What's your zip code?</div>
-        <input className="input-line" className="zip-form" type="text" value={zip} placeholder="5 digit zip code" maxLength="5" onChange={handleZip} />
-        <div>We use this to find your local sunset time.</div>
-        <input type="submit" value="Submit" />
+        <div className="zip-label">What's your zip code?</div>
+        <input className="zip-form" type="text" value={zip} placeholder="5 digit zip code" maxLength="5" onChange={handleZip} />
+        <div className="zip-privacy">We use this to find your local sunset time.</div>
+        <input className="submit" type="submit" value="Submit" />
       </form>
     </div>
   );
