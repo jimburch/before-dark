@@ -80,10 +80,10 @@ const Input = ({ toggle, getSunset }) => {
           </select>
         </div>
         <div className="pace-label">How many minutes do you think it will take to run each mile, on average?</div>
-        {pace ? <div className="selected">{pace} minutes per mile</div> : null}
+        {pace ? <div className="selected">{pace} per mile</div> : null}
         <div className="custom-select">
           <select onChange={handlePace}>
-            <option value="">Select Pace:</option>
+            <option value="">Select Pace</option>
             {minutes.map((minute, index) => (
               <option key={index} value={minute}>{minute}</option>
             ))}

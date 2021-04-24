@@ -37,6 +37,30 @@ h1 {
   margin-bottom: 8px;
 }
 
+select {
+  background-color: #000220;
+  color: white;
+  border: 1px white solid;
+  border-radius: 5px;
+  padding: 5px;
+  width: 125px;
+}
+
+.selected {
+  font-size: 14px;
+  font-weight: bold;
+  color: yellow;
+}
+
+.zip-form {
+  background-color: #000220;
+  color: white;
+  border: 1px white solid;
+  border-radius: 5px;
+  padding: 5px;
+  width: 125px;
+}
+
 .zip-privacy {
   font-size: 12px;
   color: gray;
@@ -48,7 +72,17 @@ h1 {
   color: white;
   padding: 15px 25px;
   border: 1px white solid;
-  border-radius: 10px;
+  border-radius: 5px;
+}
+
+.submit:hover {
+  background-color: white;
+  color: #000220;
+}
+
+.submit:active {
+  background-color: white;
+  color: #000220;
 }
 
 /* CUSTOM DROPDOWN SELECT */
