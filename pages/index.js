@@ -148,7 +148,9 @@ const Index = () => {
         {toggle ? <button className="again-btn" variant="primary" type="submit" onClick={e => clearResult(e)}>Run Again</button> : null}
         <Input toggle={toggle} getSunset={getSunset} />
       </div>
-      <div className="footnote">This app uses Google Maps geolocation API and Sunset Sunrise API.</div>
+      <footer>
+        <div className="footnote">This app uses Google Maps geolocation API and Sunset Sunrise API</div>
+      </footer>
     </div>
   );
 };

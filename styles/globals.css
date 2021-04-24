@@ -28,7 +28,7 @@ h1 {
   margin: auto;
   width: 80%;
   text-align: center;
-  margin-top: 25%;
+  margin-top: 15%;
 }
 
 .input-form {
@@ -49,15 +49,18 @@ h1 {
 
 /* FOOTER */
 
-.footnote {
+footer {
   position: fixed;
   bottom: 0;
+  width: 100%;
+  left: 0px;
+  margin-bottom: 10px;
+}
+
+.footnote {
   margin: auto;
+  width: 100%;
   text-align: center;
-  width: 80%;
-  color: lightgray;
-  font-weight: 300;
-  font-size: 0.75em;
-  /* background-color: lightgray; */
-  /* color: black; */
+  font-size: 0.65em;
+  color: gray;
 }
