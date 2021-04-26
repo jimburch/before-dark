@@ -66,7 +66,7 @@ select {
   color: gray;
 }
 
-.submit {
+.submit, .again-btn {
   margin-top: 25px;
   background-color: #000220;
   color: white;
@@ -75,17 +75,32 @@ select {
   border-radius: 5px;
 }
 
-.submit:hover {
+.submit:hover, .again-btn:hover {
   background-color: white;
   color: #000220;
 }
 
-.submit:active {
+.submit:active, .again-btn:active {
   background-color: white;
   color: #000220;
 }
 
-/* CUSTOM DROPDOWN SELECT */
+/* RESULT */
+
+.result-container * {
+  margin-bottom: 8px;
+}
+
+.result-sub, .result-main {
+ font-size: 14px;
+ font-weight: bold;
+}
+
+.leave-time {
+  color: yellow;
+  font-size: 35px;
+  font-weight: bold;
+}
 
 /* FOOTER */
 

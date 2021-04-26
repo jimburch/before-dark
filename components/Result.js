@@ -1,7 +1,8 @@
 const Result = ({ sunset, runTime, leaveTime }) => (
-  <div>
+  <div className="result-container">
     <div className="result-sub">Tonight's sunset is at {sunset}</div>
-    <div className="result-main">Start your run at {leaveTime} to get home before dark!</div>
+    <div className="leave-time">{leaveTime}</div>
+    <div className="result-main">Leave before {leaveTime} to beat the sunset!</div>
   </div>
 );
 
