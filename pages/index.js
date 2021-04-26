@@ -1,20 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import Button from 'react-bootstrap/Button';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
-import Input from './Input.jsx';
-import Result from './Result.jsx';
 
-const App = () => {
+import Input from '../components/Input';
+import Result from '../components/Result';
+
+const Index = () => {
   const [sunset, setSunset] = useState('');
   const [runTime, setRunTime] = useState('');
   const [leaveTime, setLeaveTime] = useState('');
   const [toggle, setToggle] = useState(false);
 
-  const getSunset = (e, zip, distance, pace) => {
-    e.preventDefault();
+  const getSunset = (zip, distance, pace) => {
     const options = {
-      url: `http://52.14.85.171/sunset/${zip}`,
+      url: `http://localhost:8000/sunset/${zip}`,
       method: 'get'
     }
 
@@ -37,7 +35,7 @@ const App = () => {
     setToggle(true);
 
     const options = {
-      url: 'http://52.14.85.171/leave',
+      url: 'http://localhost:8000/leave',
       method: 'post',
       headers: {
         'Content-Type': 'application/json'
@@ -142,30 +140,21 @@ const App = () => {
   }
 
   return (
-    <Container className="app-container">
-      <Row>
-        <Col>
-          <img className="logo-img" src="./static/before-dark-logo.png" alt="before-dark-logo" />
-          <div className="tagline">A runner's companion app so you can beat the sunset.</div>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <Input toggle={toggle} getSunset={getSunset} />
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          {toggle ? <Result className="result" sunset={sunset} runTime={runTime} leaveTime={leaveTime} /> : null}
-        </Col>
-      </Row>
-      <Container>
-        <Row>
-          {toggle ? <Button className="again-btn" variant="primary" type="submit" onClick={e => clearResult(e)}>Run Again</Button> : null}
-        </Row>
-      </Container>
-    </Container>
+    <div className="app-container">
+      <h1>Before Dark 🌙</h1>
+      <div className="tagline">A runner's companion app so you can beat the sunset</div>
+      <div className="form-container">
+        {toggle ?
+        <div>
+          <Result className="result" sunset={sunset} runTime={runTime} leaveTime={leaveTime} />
+          <button className="again-btn" variant="primary" type="submit" onClick={e => clearResult(e)}>Run Again</button>
+        </div> : <Input toggle={toggle} getSunset={getSunset} />}
+      </div>
+      <footer>
+        <div className="footnote">This app uses Google Maps geolocation API and Sunset Sunrise API</div>
+      </footer>
+    </div>
   );
 };
 
-export default App;
+export default Index;

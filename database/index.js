@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-require('dotenv').config();
+const config = require('../config.js');
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/before-dark', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(`mongodb+srv://jim:${config.MONGO}@before-dark.ygq6e.mongodb.net/before-dark`, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const db = mongoose.connection;
 db.on('error', () => { console.log('Mongoose connection error'); });

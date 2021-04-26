@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+body {
+  color: white;
+  background-color: #000220;
+  font-family: Open Sans;
+}
+
+h1 {
+  margin: auto;
+  /* width: 50%; */
+  text-align: center;
+  white-space: nowrap;
+  margin-top: 35px;
+  font-size: 2.5em;
+}
+
+.tagline {
+  margin: auto;
+  text-align: center;
+  margin: 15px 0px;
+  padding: 0px 50px;
+  font-weight: 200;
+  font-size: 1em;
+}
+
+.form-container {
+  margin: auto;
+  width: 80%;
+  text-align: center;
+  margin-top: 15%;
+}
+
+/* INPUT FORM */
+
+.input-container * {
+  margin-bottom: 8px;
+}
+
+select {
+  background-color: #000220;
+  color: white;
+  border: 1px white solid;
+  border-radius: 5px;
+  padding: 5px;
+  width: 125px;
+}
+
+.selected {
+  font-size: 14px;
+  font-weight: bold;
+  color: yellow;
+}
+
+.zip-form {
+  background-color: #000220;
+  color: white;
+  border: 1px white solid;
+  border-radius: 5px;
+  padding: 5px;
+  width: 125px;
+}
+
+.zip-privacy {
+  font-size: 12px;
+  color: gray;
+}
+
+.submit, .again-btn {
+  margin-top: 25px;
+  background-color: #000220;
+  color: white;
+  padding: 15px 25px;
+  border: 1px white solid;
+  border-radius: 5px;
+}
+
+.submit:hover, .again-btn:hover {
+  background-color: white;
+  color: #000220;
+}
+
+.submit:active, .again-btn:active {
+  background-color: white;
+  color: #000220;
+}
+
+/* RESULT */
+
+.result-container * {
+  margin-bottom: 8px;
+}
+
+.result-sub, .result-main {
+ font-size: 14px;
+ font-weight: bold;
+}
+
+.leave-time {
+  color: yellow;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+/* FOOTER */
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0px;
+  margin-bottom: 10px;
+}
+
+.footnote {
+  margin: auto;
+  width: 100%;
+  text-align: center;
+  font-size: 0.65em;
+  color: gray;
+}
