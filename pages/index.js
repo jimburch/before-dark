@@ -144,9 +144,11 @@ const Index = () => {
       <h1>Before Dark 🌙</h1>
       <div className="tagline">A runner's companion app so you can beat the sunset</div>
       <div className="form-container">
-        {toggle ? <Result className="result" sunset={sunset} runTime={runTime} leaveTime={leaveTime} /> : null}
-        {toggle ? <button className="again-btn" variant="primary" type="submit" onClick={e => clearResult(e)}>Run Again</button> : null}
-        <Input toggle={toggle} getSunset={getSunset} />
+        {toggle ?
+        <div>
+          <Result className="result" sunset={sunset} runTime={runTime} leaveTime={leaveTime} />
+          <button className="again-btn" variant="primary" type="submit" onClick={e => clearResult(e)}>Run Again</button>
+        </div> : <Input toggle={toggle} getSunset={getSunset} />}
       </div>
       <footer>
         <div className="footnote">This app uses Google Maps geolocation API and Sunset Sunrise API</div>

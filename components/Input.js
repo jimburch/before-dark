@@ -91,7 +91,7 @@ const Input = ({ toggle, getSunset }) => {
         </div>
         <div className="zip-label">What's your zip code?</div>
         <input className="zip-form" type="text" value={zip} placeholder="5 digit zip code" maxLength="5" onChange={handleZip} />
-        <div className="zip-privacy">We use this to find your local sunset time.</div>
+        <div className="zip-privacy">We use this to find your local sunset time</div>
         <input className="submit" type="submit" value="Submit" />
       </form>
     </div>
