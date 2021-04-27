@@ -12,7 +12,7 @@ const Index = () => {
 
   const getSunset = (zip, distance, pace) => {
     const options = {
-      url: `http://localhost:8000/sunset/${zip}`,
+      url: `/api/sunset/${zip}`,
       method: 'get'
     }
 
