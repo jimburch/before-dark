@@ -6,7 +6,7 @@
 	"scripts": {
 		"dev": "concurrently \"next dev\" \"nodemon ./server/index.js\"",
 		"build": "next build",
-		"start": "next start",
+		"start": " concurrently \"next start\" \"node ./server/index.js\"",
 		"server": "nodemon ./server/index.js"
 	},
 	"repository": {
