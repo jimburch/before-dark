@@ -2,3 +2,5 @@ node_modules
 config.js
 bundle.js
 .next
+.env
+.env.local
