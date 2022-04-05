@@ -1,36 +1,37 @@
 {
-  "name": "before-dark",
-  "version": "1.0.0",
-  "description": "A runner's companion app that helps you beat the sunset.",
-  "main": "index.js",
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "server": "nodemon ./server/index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JimBurch/before-dark.git"
-  },
-  "keywords": [],
-  "author": "Jim Burch",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/JimBurch/before-dark/issues"
-  },
-  "homepage": "https://github.com/JimBurch/before-dark#readme",
-  "dependencies": {
-    "axios": "^0.21.1",
-    "bootstrap": "^4.6.0",
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.0",
-    "express": "^4.17.1",
-    "mongoose": "^5.12.2",
-    "next": "^10.1.3",
-    "nodemon": "^2.0.7",
-    "react": "^17.0.2",
-    "react-bootstrap": "^1.5.2",
-    "react-dom": "^17.0.2"
-  }
+	"name": "before-dark",
+	"version": "1.0.0",
+	"description": "A runner's companion app that helps you beat the sunset.",
+	"main": "index.js",
+	"scripts": {
+		"dev": "concurrently \"next dev\" \"nodemon ./server/index.js\"",
+		"build": "next build",
+		"start": "next start",
+		"server": "nodemon ./server/index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/JimBurch/before-dark.git"
+	},
+	"keywords": [],
+	"author": "Jim Burch",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/JimBurch/before-dark/issues"
+	},
+	"homepage": "https://github.com/JimBurch/before-dark#readme",
+	"dependencies": {
+		"axios": "^0.21.1",
+		"bootstrap": "^4.6.0",
+		"concurrently": "^7.1.0",
+		"cors": "^2.8.5",
+		"dotenv": "^16.0.0",
+		"express": "^4.17.1",
+		"mongoose": "^5.12.2",
+		"next": "^10.1.3",
+		"nodemon": "^2.0.7",
+		"react": "^17.0.2",
+		"react-bootstrap": "^1.5.2",
+		"react-dom": "^17.0.2"
+	}
 }

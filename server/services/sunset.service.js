@@ -1,11 +1,11 @@
 const axios = require('axios');
 
-const TOKEN = GOOGLE_MAPS_API_KEY.process.env;
+const TOKEN = process.env.GOOGLE_MAPS_API_KEY;
 
 const getCoordsAndSunset = (data, callback) => {
 	axios
 		.get(
-			`https://maps.googleapis.com/maps/api/geocode/json?address=${data}&key=${config.TOKEN}`
+			`https://maps.googleapis.com/maps/api/geocode/json?address=${data}&key=${TOKEN}`
 		)
 		.then(response => {
 			const lat = response.data.results[0].geometry.location.lat;
