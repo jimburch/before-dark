@@ -5,7 +5,6 @@ import Input from '../components/Input';
 import Result from '../components/Result';
 
 const NODE_ENV = process.env.NEXT_PUBLIC_NODE_ENV;
-console.log({ NODE_ENV });
 
 const Index = () => {
 	const [sunset, setSunset] = useState('');
