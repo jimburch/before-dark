@@ -16,6 +16,7 @@ const Index = () => {
 		axios
 			.get(`/api/sunset/${zip}`)
 			.then(response => {
+				console.log('front end response: ', response);
 				runCalc(response.data, distance, pace, zip);
 			})
 			.catch(error => {

@@ -3,13 +3,16 @@ const axios = require('axios');
 const TOKEN = process.env.GOOGLE_MAPS_API_KEY;
 
 export default function handler(req, res) {
+	console.log('does it hit?');
 	const zip = req.query.zip;
+	console.log({ zip });
 	return new Promise((resolve, reject) => {
 		axios
 			.get(
 				`https://maps.googleapis.com/maps/api/geocode/json?address=${zip}&key=${TOKEN}`
 			)
 			.then(response => {
+				console.log('first response: ', response);
 				const lat = response.data.results[0].geometry.location.lat;
 				const lng = response.data.results[0].geometry.location.lng;
 				return axios.get(
@@ -17,10 +20,12 @@ export default function handler(req, res) {
 				);
 			})
 			.then(response => {
+				console.log('second response: ', response);
 				res.status(200).json(response.data.results.sunset);
 				resolve();
 			})
 			.catch(err => {
+				console.log('catch?');
 				console.error(err);
 				res.sendStatus(500);
 				resolve();
