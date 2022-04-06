@@ -119,9 +119,9 @@ const Index = () => {
 	return (
 		<div className="app-container">
 			<h1>Before Dark 🌙</h1>
-			<div className="tagline">
+			<h2 className="tagline">
 				A runner's companion app so you can beat the sunset
-			</div>
+			</h2>
 			<div className="form-container">
 				{toggle ? (
 					<div>
@@ -146,7 +146,10 @@ const Index = () => {
 			</div>
 			<footer>
 				<div className="footnote">
-					This app uses Google Maps geolocation API and Sunset Sunrise API
+					<a href="https://github.com/JimBurch/before-dark">Github</a>
+					<p>
+						This app uses Google Maps geolocation API and Sunset Sunrise API
+					</p>
 				</div>
 			</footer>
 		</div>

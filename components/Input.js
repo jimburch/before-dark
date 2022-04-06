@@ -106,6 +106,7 @@ const Input = ({ toggle, getSunset }) => {
 					placeholder="5 digit zip code"
 					maxLength="5"
 					onChange={handleZip}
+					autocomplete="off"
 				/>
 				<div className="zip-privacy">
 					We use this to find your local sunset time
