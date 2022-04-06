@@ -12,6 +12,17 @@ const Index = () => {
 	const [leaveTime, setLeaveTime] = useState('');
 	const [toggle, setToggle] = useState(false);
 
+	useEffect(() => {
+		axios
+			.get('/api/test')
+			.then(response => {
+				console.log(resonse.data);
+			})
+			.catch(e => {
+				console.error(e);
+			});
+	}, []);
+
 	const getSunset = (zip, distance, pace) => {
 		axios
 			.get(`/api/sunset/${zip}`)
