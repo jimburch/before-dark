@@ -13,14 +13,17 @@ const Index = () => {
 	const [toggle, setToggle] = useState(false);
 
 	useEffect(() => {
-		axios
-			.get('/api/test')
-			.then(response => {
-				console.log(resonse.data);
-			})
-			.catch(e => {
-				console.error(e);
-			});
+		const fetchTest = async () => {
+			await axios
+				.get('/api/test')
+				.then(response => {
+					console.log(response.data);
+				})
+				.catch(e => {
+					console.error(e);
+				});
+		};
+		fetchTest();
 	}, []);
 
 	const getSunset = (zip, distance, pace) => {
