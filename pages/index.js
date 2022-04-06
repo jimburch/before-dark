@@ -13,17 +13,13 @@ const Index = () => {
 	const [toggle, setToggle] = useState(false);
 
 	const getSunset = (zip, distance, pace) => {
-		const options = {
-			url: `${NODE_ENV}/sunset/${zip}`,
-			method: 'get',
-		};
-
-		axios(options)
+		axios
+			.get(`/api/sunset/${zip}`)
 			.then(response => {
 				runCalc(response.data, distance, pace, zip);
 			})
 			.catch(error => {
-				console.log(error);
+				console.error(error);
 			});
 	};
 
