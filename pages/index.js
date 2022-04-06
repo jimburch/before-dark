@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 
 import Input from '../components/Input';
@@ -12,25 +12,10 @@ const Index = () => {
 	const [leaveTime, setLeaveTime] = useState('');
 	const [toggle, setToggle] = useState(false);
 
-	useEffect(() => {
-		const fetchTest = async () => {
-			await axios
-				.get('/api/test')
-				.then(response => {
-					console.log(response.data);
-				})
-				.catch(e => {
-					console.error(e);
-				});
-		};
-		fetchTest();
-	}, []);
-
 	const getSunset = (zip, distance, pace) => {
 		axios
 			.get(`/api/sunset/${zip}`)
 			.then(response => {
-				console.log('front end response: ', response);
 				runCalc(response.data, distance, pace, zip);
 			})
 			.catch(error => {
